@@ -408,7 +408,7 @@ Copy any changes made here over to the README too. -->
               </div>
 
               <div class="col-xs-6 col-md-4">
-                <a class="thumbnail" href="../examples/justified-nav/">
+                <a class="thumbnail" href="../examples/justified-nav/index.html">
                   <img src="../examples/screenshots/justified-nav.jpg" alt="Justified nav example">
                 </a>
                 <h3>Justified nav</h3>
@@ -417,7 +417,7 @@ Copy any changes made here over to the README too. -->
               <div class="clearfix visible-xs"></div>
 
               <div class="col-xs-6 col-md-4">
-                <a class="thumbnail" href="../examples/sticky-footer/">
+                <a class="thumbnail" href="../examples/sticky-footer/index.html">
                   <img src="../examples/screenshots/sticky-footer.jpg" alt="Sticky footer example">
                 </a>
                 <h3>Sticky footer</h3>
@@ -425,7 +425,7 @@ Copy any changes made here over to the README too. -->
               </div>
 
               <div class="col-xs-6 col-md-4">
-                <a class="thumbnail" href="../examples/sticky-footer-navbar/">
+                <a class="thumbnail" href="../examples/sticky-footer-navbar/index.html">
                   <img src="../examples/screenshots/sticky-footer-navbar.jpg" alt="Sticky footer with navbar example">
                 </a>
                 <h3>Sticky footer with navbar</h3>
@@ -478,7 +478,156 @@ Copy any changes made here over to the README too. -->
           <h1 id="disable-responsive" class="page-header">Disabling responsiveness</h1>
 
           <p class="lead">Bootstrap automatically adapts your pages for various screen sizes. Here's how to disable this feature so your page works like <a href="../examples/non-responsive/index.html">this non-responsive example.</a></p>
+          <h2>Steps to disable page responsiveness</h2>
+          <ol>
+            <li>Omit the viewport <code>&lt;meta&gt;</code> mentioned in <a href="../css/#overview-mobile">the CSS docs</a></li>
+            <li>Override the <code>width</code> on the <code>.container</code> for each frid tier with a single width, for example<code>width: 970px !important;</code> Be sure that this comes after the default Bootstrap CSS. You can optionally avoid the <code>!important</code> with media queries or some selector-fu.</li>
+            <li>If using navbars, remove all navbar collapsing and expanding behavior.</li>
+            <li>For grid layouts, use <code>.col-xs-*</code> classes in addition to, or in place of, the medium/large ones. Don't worry, the extra-small device grid scales to all resolutions</li>
+          </ol>
+          <p>You'll still need Respond.js for IE8 (since our media queries are still there and need to be processed). This disables the "mobile site" aspects of Bootstrap.</p>
+
+          <h2>Bootstrap template with responsiveness disabled</h2>
+          <p>We've applied these steps to an example. Read its source code to see the specific changes implemented.</p>
+          <p>
+            <a href="../examples/non-responsive/" class="btn btn-primary">View non-responsive example</a>
+          </p>
         </div>
+
+        <!-- cross link to new migration page -->
+        <div class="bs-callout bs-callout-info" id="migration">
+          <h4>Migration from v2.x to v3.x</h4>
+          <p>Looking to migrate from an older version of Bootstrap to v3.x? Check out <a href="../migration">our migration guides.</a></p>
+        </div>
+
+        <div class="bs-docs-section">
+          <h1 class="page-header" id="support">Browser and device support</h1>
+          <p class="lead">Bootstrap is built to work best in the latest desktop and mobile browsers, meaning older browsers might display differently styled, though fully functional, renderings of certain components.</p>
+        </div>
+
+        <h2 id="support-browsers">Supported browsers</h2>
+        <p>Specifically, we support the <strong>latest versions</strong> of the following browsers and platforms. On Windows, <strong>we support Internet Explorer 8-11</strong>. More specific support information is provided below.</p>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <td></td>
+                <th>Chrome</th>
+                <th>Firefox</th>
+                <th>internet Explorer</th>
+                <th>Opera</th>
+                <th>Safari</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Android</th>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+                <td class="text-muted" rowspan="3" style="vertical-align: middle;">N/A</td>
+                <td class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Not Supported</td>
+                <td class="text-muted">N/A</td>
+              </tr>
+              <tr>
+                <th scope="row">iOS</th>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+                <td class="text-muted">N/A</td>
+                <td class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Not Supported</td>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+              </tr>
+              <tr>
+                <th scope="row">Mac OS X</th>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+              </tr>
+              <tr>
+                <th scope="row">Windows</th>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+                <td class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Not Supported</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Unofficially, Bootstrap should look and behave well enough in Chromium and Chrome for Linux, Firefox for Linux, and Internet Explorer 7, though they are not officially supported.</p>
+        <p>For a list of some of the browser bugs that Bootstrap has to grapple with, see our <a href="../browser-bugs">Wall of browser bugs</a>.</p>
+
+        <h2 id="support-ie8-ie9">Internet Explorer 8 and 9</h2>
+        <p>Internet Explorer 8 and 9 are also supported, however, please be aware that some CSS3 properties and HTML5 elements are not fully supported by these browsers. In addition, <strong>Internet Explorer 8 requires the use of <a href="https://github.com/scottjehl/Respond">Respond.js</a> to enable media query support.</strong></p>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th class="col-xs-4">Feature</th>
+                <th class="col-xs-4">Internet Explorer 8</th>
+                <th class="col-xs-4">Internet Explorer 9</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><code>border-radius</code></th>
+                <td class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Not supported</td>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>box-shadow</code></th>
+                <td class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Not supported</td>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>transform</code></th>
+                <td class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Not supported</td>
+                <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported, with <code>-ms</code> prefix</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>transition</code></th>
+                <td colspan="2" class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Not supported</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>placeholder</code></th>
+                <td colspan="2" class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Not supported</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>visit <a href="http://caniuse.com/">Can I use...</a> for details on browser support of CSS3 and HTML5 features.</p>
+
+        <h2 id="support-ie8-respondjs">Internet Explorer 8 and Respond.js</h2>
+        <p>Beware of the following caveats when using Respond.js in your development and production environments for Internet Explorer 8.</p>
+        <h3 id="respond-js-x-domain">Respond.js and cross-domain CSS</h3>
+        <p>Using Respond.js with CSS hosted on a different (sub)domain (for example, on a CDN) requires some additional setup. <a href="https://github.com/scottjehl/Respond/blob/master/README.md#cdnx-domain-setup">See the Respond.js docs</a> for details.</p>
+        <h3 id="respond-file-proto">Respond.js and <code>file://</code></h3>
+        <p>Due to browser security rules, Respond.js doesn't work with pages viewed via the <code>file://</code> protocol (like when opening a local HTML file). To test responsive features in IE8, view your pages over HTTP(S). <a href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">See the Respond.js docs</a> for details.</p>
+        <h3 id="respond-import">Respond.js and <code>@import</code></h3>
+        <p>Respond.js doesn't work with CSS that's referenced via <code>@import</code>. In particular, some Drupal configurations are known to use <code>@import</code>. <a href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">See the Respond.js docs</a> for details.</p>
+
+        <h2 id="support-ie8-box-sizing">Internet Explorer 8 and box-sizing</h2>
+        <p>IE8 does not fully support <code>box-sizing: border-box;</code> when combined with <code>min-width</code>, <code>max-width</code>, <code>min-height</code>, or <code>max-height</code>. For that reason, as of v3.0.1, we no longer use <code>max-width</code> on <code>.container</code>s.</p>
+
+        <h2 id="support-ie8-font-face">Internet Explorer 8 and @font-face</h2>
+        <p>IE8 has some issues with <code>@font-face</code> when combined with <code>:before</code>. Bootstrap uses that combination with its Glyphicons. If a page is cached, and loaded without the mouse over the window (i.e. hit the refresh button or load something in an iframe) then the page gets rendered before the font loads. Hovering over the page (body) will show some of the icons and hovering over the remaining icons will show those as well. <a href="https://github.com/twbs/bootstrap/issues/13863">See issue #13863</a> for details.</p>
+
+        <h2 id="support-ie-compatibility-modes">IE Compatibility modes</h2>
+          <p>Bootstrap is not supported in the old Internet Explorer compatibility modes. To be sure you're using the latest rendering mode for IE, consider including the appropriate <code>&lt;meta&gt;</code> tag in your pages:</p>
+          <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span></code></pre></div>
+          <p>Confirm the document mode by opening the debugging tools: press <kbd>F12</kbd> and check the "Document Mode".</p>
+          <p>This tag is included in all of Bootstrap's documentation and examples to ensure the best rendering possible in each supported version of Internet Explorer.</p>
+          <p>See <a href="https://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge">this StackOverflow question</a> for more information.</p>
+
+          <h2 id="support-ie10-width">Internet Explorer 10 in Windows 8 and Windows Phone 8</h2>
+          <p>Internet Explorer 10 doesn't differentiate <strong>device width</strong> from <strong>viewport width</strong>, and thus doesn't properly apply the media queries in Bootstrap's CSS. Normally you'd just add a quick snippet of CSS to fix this:</p>
+          <div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@-ms-viewport</span>       <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="n">device-width</span><span class="p">;</span> <span class="p">}</span></code></pre></div>
+            <p>However, this doesn't work for devices running Windows Phone 8 versions older than <a href="http://blogs.windows.com/windows_phone/b/wpdev/archive/2013/10/14/introducing-windows-phone-preview-for-developers.aspx">Update 3 (a.k.a. GDR3)</a>, as it causes such devices to show a mostly desktop view instead of narrow "phone" view. To address this, you'll need to <strong>include the following CSS and JavaScript to work around the bug</strong>.</p>
+          <div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@-webkit-viewport</span>   <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="n">device-width</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">@-moz-viewport</span>      <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="n">device-width</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">@-ms-viewport</span>       <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="n">device-width</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">@-o-viewport</span>        <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="n">device-width</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">@viewport</span>           <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="n">device-width</span><span class="p">;</span> <span class="p">}</span></code></pre></div>
       </div>
     </div>
   </div>
