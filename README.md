@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-1. Download the [files](https://github.com/nitinprakash96/Bootstrap-documentation/archieve/master.zip).
+1. Download the [files](https://github.com/nitinprakash96/Bootstrap-documentation/archive/master.zip).
 2. Extract zip file.
 3. Open `index.html` in a browser.
 
